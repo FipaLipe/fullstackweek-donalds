@@ -1,9 +1,9 @@
-import { OrderConsumptionMethod } from "@prisma/client";
-import Image from "next/image";
-import Link from "next/link";
+import { OrderConsumptionMethod } from '@prisma/client';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 
 interface ConsumptionMethodOption {
   imageUrl: string;
@@ -25,7 +25,13 @@ const ConsumptionMethodOption = ({
     >
       <Card className="flex w-full flex-col items-center justify-center gap-8 rounded-[20px] px-4 py-8 hover:bg-zinc-50">
         <div className="relative h-[80px] w-[80px]">
-          <Image src={imageUrl} alt="" fill />
+          <Image
+            src={imageUrl}
+            alt=""
+            fill
+            className="object-contain"
+            sizes="(max-width:80px)"
+          />
         </div>
         <Button variant="secondary">{buttonText}</Button>
       </Card>
