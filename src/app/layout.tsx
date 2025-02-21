@@ -1,15 +1,17 @@
-import "./globals.css";
+import './globals.css';
 
-import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import type { Metadata } from 'next';
+import { Poppins } from 'next/font/google';
+
+import CartProvider from './[slug]/menu/context/cart';
 
 const poppins = Poppins({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "FSW Donalds",
+  title: 'FSW Donalds',
 };
 
 export default function RootLayout({
@@ -19,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>{children}</body>
+      <body className={`${poppins.className} antialiased`}>
+        <CartProvider>{children}</CartProvider>
+      </body>
     </html>
   );
 }
