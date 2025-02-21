@@ -16,7 +16,7 @@ const isConsumptionMethodValid = (consumptionMethod: string) => {
   );
 };
 
-const menu = async ({ params, searchParams }: MenuProps) => {
+const Menu = async ({ params, searchParams }: MenuProps) => {
   const { slug } = await params;
   const { consumption_method: consumptionMethod } = await searchParams;
 
@@ -50,4 +50,4 @@ const menu = async ({ params, searchParams }: MenuProps) => {
   );
 };
 
-export default menu;
+export default Menu;
